@@ -5,6 +5,8 @@
  */
 package ejercicio;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author DanielDeJesus
@@ -60,10 +62,10 @@ public class Interfaz4 extends javax.swing.JFrame {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
 
         txtCuotaInicial.setEditable(false);
-        jPanel1.add(txtCuotaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 70, -1));
+        jPanel1.add(txtCuotaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 120, -1));
 
         jLabel4.setText("Monto de cada cuota del % restante:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, -1, -1));
 
         txtMCuotaFinal.setEditable(false);
         txtMCuotaFinal.addActionListener(new java.awt.event.ActionListener() {
@@ -71,9 +73,14 @@ public class Interfaz4 extends javax.swing.JFrame {
                 txtMCuotaFinalActionPerformed(evt);
             }
         });
-        jPanel1.add(txtMCuotaFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 70, -1));
+        jPanel1.add(txtMCuotaFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 130, -1));
 
         jButton1.setText("Calcular");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
 
         jButton2.setText("Borrar");
@@ -120,6 +127,33 @@ public class Interfaz4 extends javax.swing.JFrame {
         
         txtNMetrosCuadrados.requestFocusInWindow();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String res1,res2;
+        double nMCuadrado, op, op2, op3;
+        
+        if(txtNMetrosCuadrados.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this,"Digite el Nº de metros cuadrados","Error", JOptionPane.ERROR_MESSAGE);
+            txtNMetrosCuadrados.requestFocusInWindow();
+        }
+        else{
+        
+        nMCuadrado = Double.parseDouble(txtNMetrosCuadrados.getText());
+        
+        op = nMCuadrado * 80000;
+        op2 = op * 0.35;
+        op3 = (op * 0.65)/12;
+        
+        res1 = String.valueOf(op2);
+        res2 = String.valueOf(op3);
+        
+        txtCuotaInicial.setText(res1);
+        txtMCuotaFinal.setText(res2);
+        
+        
+        }   
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
