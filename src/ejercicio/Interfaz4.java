@@ -27,21 +27,99 @@ public class Interfaz4 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtNMetrosCuadrados = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtCuotaInicial = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtMCuotaFinal = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
+        jLabel1.setText("Ejercicio Número 4: Calcular el valor a pagar en 2 partes");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+
+        jLabel2.setText("Nº Metros cuadrados:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
+
+        txtNMetrosCuadrados.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNMetrosCuadradosKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtNMetrosCuadrados, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 70, -1));
+
+        jLabel3.setText("Cuota inicial del 35%:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
+
+        txtCuotaInicial.setEditable(false);
+        jPanel1.add(txtCuotaInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 70, -1));
+
+        jLabel4.setText("Monto de cada cuota del % restante:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+
+        txtMCuotaFinal.setEditable(false);
+        txtMCuotaFinal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMCuotaFinalActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtMCuotaFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 70, -1));
+
+        jButton1.setText("Calcular");
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
+
+        jButton2.setText("Borrar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtMCuotaFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMCuotaFinalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMCuotaFinalActionPerformed
+
+    private void txtNMetrosCuadradosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNMetrosCuadradosKeyTyped
+        char c=evt.getKeyChar();
+        
+        if(!Character.isDigit(c)){
+            getToolkit().beep();
+            
+            evt.consume();
+            
+        }
+    }//GEN-LAST:event_txtNMetrosCuadradosKeyTyped
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        txtNMetrosCuadrados.setText("");
+        txtCuotaInicial.setText("");
+        txtMCuotaFinal.setText("");
+        
+        txtNMetrosCuadrados.requestFocusInWindow();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +157,15 @@ public class Interfaz4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtCuotaInicial;
+    private javax.swing.JTextField txtMCuotaFinal;
+    private javax.swing.JTextField txtNMetrosCuadrados;
     // End of variables declaration//GEN-END:variables
 }
